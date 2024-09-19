@@ -1,6 +1,6 @@
 import requests
-from twilio.rest import Client
 from dotenv import dotenv_values
+from twilio.rest import Client
 
 properties = dotenv_values(".env")
 
@@ -16,7 +16,6 @@ def get_crypto_price():
         'ids': 'bitcoin,ethereum,binancecoin',
         'vs_currencies': 'usd'
     }
-
     response = requests.get(url, params=params)
     response.raise_for_status()
     return response.json()
@@ -47,8 +46,11 @@ def send_whatsapp_alert(name, threshold, price):
 
 
 def main():
-    prices = get_crypto_price()
-    check_price_and_alert(prices)
+    try:
+        prices = get_crypto_price()
+        check_price_and_alert(prices)
+    except Exception:
+        print("ERROR: Problema al obtener los precios de las criptomonedas.")
 
 
 if __name__ == "__main__":
