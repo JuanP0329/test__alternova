@@ -132,6 +132,19 @@ To run the script, use the following command in the terminal:
 ```bash
 python main.py
 ```
+## Alternative
+
+If you want to run the script with Docker, follow these steps:
+
+- Run the following command:
+
+```bash
+docker-compose up --build
+```
+This command will create both the Docker image and the container, using the configuration specified in the docker-compose.yml file.
+
+- You can also start and manage the container using the Docker Desktop graphical interface:
+    ![image16.png](readmeresource%2Fimage16.png)
 
 ## Customization
 
