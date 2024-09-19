@@ -13,6 +13,7 @@ This Python script monitors the prices of Bitcoin, Ethereum, and Binance Coin. I
 
 - Python 3.6 or higher.
 - pip (package manager).
+- .env file is required.
 - Libraries:
     - `requests`
     - `twilio`
