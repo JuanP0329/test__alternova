@@ -4,31 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fa225b9-a313-4373-92dd-008f7626a673" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/test__alternova.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readmeresource/image1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readmeresource/image10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readmeresource/image11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readmeresource/image12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readmeresource/image13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readmeresource/image14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readmeresource/image15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readmeresource/image2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readmeresource/image3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readmeresource/image4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readmeresource/image5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readmeresource/image6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readmeresource/image7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readmeresource/image8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readmeresource/image9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    <list default="true" id="2fa225b9-a313-4373-92dd-008f7626a673" name="Changes" comment="- Added Docker Compose to create the container.&#10;- Added Dockerfile to set up the container environment from the image.&#10;- Updated the README to include Docker instructions.&#10;- Encapsulated API request errors.">
+      <change afterPath="$PROJECT_DIR$/app_request.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/request_error.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/twilio_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/add-docker-in-project" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -54,20 +41,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/create-other-file-of-configure",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\HP\PycharmProjects\test__alternova\readmeresource" />
@@ -121,14 +108,85 @@
       <updated>1726685909502</updated>
       <workItem from="1726685910892" duration="465000" />
       <workItem from="1726686403701" duration="18812000" />
-      <workItem from="1726762699986" duration="4105000" />
+      <workItem from="1726762699986" duration="16335000" />
     </task>
+    <task id="LOCAL-00001" summary="- Se crea el archivo `main.py`.&#10;- Se instalan las dependencias requeridas: `requests` y `twilio`.&#10;- Se configuran los permisos y credenciales de Twilio para vincular la aplicación con su servicio.&#10;- Se verifica el número de WhatsApp suministrado para recibir las notificaciones.&#10;- Se crea una función para consumir la API de CoinGecko y obtener los valores en USD de Bitcoin, Ethereum y Binance Coin en formato JSON.&#10;- Se define una función para evaluar los umbrales de las criptomonedas y generar alertas si los valores superan los límites establecidos.&#10;- Se implementa una función que genera y envía el mensaje de alerta al número de WhatsApp configurado.&#10;- Se crea la función `main` para orquestar todas las funciones y garantizar el flujo adecuado de la aplicación.">
+      <option name="closed" value="true" />
+      <created>1726774155397</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1726774155397</updated>
+    </task>
+    <task id="LOCAL-00002" summary="The main.py file is created.&#10;Required dependencies are installed: requests and twilio.&#10;Twilio permissions and credentials are configured to link the application with its service.&#10;The provided WhatsApp number is verified to receive notifications.&#10;A function is created to consume the CoinGecko API and retrieve the USD values of Bitcoin, Ethereum, and Binance Coin in JSON format.&#10;A function is defined to evaluate cryptocurrency thresholds and generate alerts if values exceed the established limits.&#10;A function is implemented to generate and send the alert message to the configured WhatsApp number.&#10;The main function is created to orchestrate all functions and ensure the proper flow of the application.">
+      <option name="closed" value="true" />
+      <created>1726774267739</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1726774267739</updated>
+    </task>
+    <task id="LOCAL-00003" summary="The python-dotenv dependency is added to handle environment variables within the project.&#10;&#10;The .env file is created to manage environment variables and securely store credentials.&#10;&#10;The .gitignore file is created to prevent sensitive files and folders like .env and venv from being uploaded to the repository.">
+      <option name="closed" value="true" />
+      <created>1726776813556</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1726776813556</updated>
+    </task>
+    <task id="LOCAL-00004" summary="The main.py file is created.&#10;Required dependencies are installed: requests and twilio.&#10;Twilio permissions and credentials are configured to link the application with its service.&#10;The provided WhatsApp number is verified to receive notifications.&#10;A function is created to consume the CoinGecko API and retrieve the USD values of Bitcoin, Ethereum, and Binance Coin in JSON format.&#10;A function is defined to evaluate cryptocurrency thresholds and generate alerts if values exceed the established limits.&#10;A function is implemented to generate and send the alert message to the configured WhatsApp number.&#10;The main function is created to orchestrate all functions and ensure the proper flow of the application.">
+      <option name="closed" value="true" />
+      <created>1726777387316</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1726777387316</updated>
+    </task>
+    <task id="LOCAL-00005" summary="- Added Docker Compose to create the container.&#10;- Added Dockerfile to set up the container environment from the image.&#10;- Updated the README to include Docker instructions.&#10;- Encapsulated API request errors.">
+      <option name="closed" value="true" />
+      <created>1726783167673</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1726783167673</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- Se crea el archivo `main.py`.&#10;- Se instalan las dependencias requeridas: `requests` y `twilio`.&#10;- Se configuran los permisos y credenciales de Twilio para vincular la aplicación con su servicio.&#10;- Se verifica el número de WhatsApp suministrado para recibir las notificaciones.&#10;- Se crea una función para consumir la API de CoinGecko y obtener los valores en USD de Bitcoin, Ethereum y Binance Coin en formato JSON.&#10;- Se define una función para evaluar los umbrales de las criptomonedas y generar alertas si los valores superan los límites establecidos.&#10;- Se implementa una función que genera y envía el mensaje de alerta al número de WhatsApp configurado.&#10;- Se crea la función `main` para orquestar todas las funciones y garantizar el flujo adecuado de la aplicación." />
+    <MESSAGE value="The python-dotenv dependency is added to handle environment variables within the project.&#10;&#10;The .env file is created to manage environment variables and securely store credentials.&#10;&#10;The .gitignore file is created to prevent sensitive files and folders like .env and venv from being uploaded to the repository." />
+    <MESSAGE value="The main.py file is created.&#10;Required dependencies are installed: requests and twilio.&#10;Twilio permissions and credentials are configured to link the application with its service.&#10;The provided WhatsApp number is verified to receive notifications.&#10;A function is created to consume the CoinGecko API and retrieve the USD values of Bitcoin, Ethereum, and Binance Coin in JSON format.&#10;A function is defined to evaluate cryptocurrency thresholds and generate alerts if values exceed the established limits.&#10;A function is implemented to generate and send the alert message to the configured WhatsApp number.&#10;The main function is created to orchestrate all functions and ensure the proper flow of the application." />
+    <MESSAGE value="- Added Docker Compose to create the container.&#10;- Added Dockerfile to set up the container environment from the image.&#10;- Updated the README to include Docker instructions.&#10;- Encapsulated API request errors." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added Docker Compose to create the container.&#10;- Added Dockerfile to set up the container environment from the image.&#10;- Updated the README to include Docker instructions.&#10;- Encapsulated API request errors." />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/test__alternova$main.coverage" NAME="main Coverage Results" MODIFIED="1726715907219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/test__alternova$main.coverage" NAME="main Coverage Results" MODIFIED="1726784633853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

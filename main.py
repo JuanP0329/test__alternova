@@ -1,25 +1,18 @@
-import requests
-from twilio.rest import Client
-from dotenv import dotenv_values
+from app_request import AppRequest
 
-properties = dotenv_values(".env")
+from twilio_config import TwilioConfig
 
-twilio_account_sid = properties["TWILIO_ACCOUNT_SID"]
-twilio_auth_token = properties["TWILIO_AUTH_TOKEN"]
-twilio_whatsapp_number = 'whatsapp:+14155238886'
-your_whatsapp_number = 'whatsapp:+573152020197'
+app_request = AppRequest()
+twilio_client = TwilioConfig()
 
 
 def get_crypto_price():
-    url = "https://api.coingecko.com/api/v3/simple/price"
+    path = "simple/price"
     params = {
         'ids': 'bitcoin,ethereum,binancecoin',
         'vs_currencies': 'usd'
     }
-
-    response = requests.get(url, params=params)
-    response.raise_for_status()
-    return response.json()
+    return app_request.get(path, params)
 
 
 def check_price_and_alert(prices):
@@ -36,19 +29,16 @@ def check_price_and_alert(prices):
 
 
 def send_whatsapp_alert(name, threshold, price):
-    client = Client(twilio_account_sid, twilio_auth_token)
     message = f"ALERTA: {name} ha superado los ${threshold} USD, su precio actual es ${price} USD."
-
-    client.messages.create(
-        from_=twilio_whatsapp_number,
-        body=message,
-        to=your_whatsapp_number
-    )
+    twilio_client.send_message(message)
 
 
 def main():
-    prices = get_crypto_price()
-    check_price_and_alert(prices)
+    try:
+        prices = get_crypto_price()
+        check_price_and_alert(prices)
+    except Exception as e:
+        print(e)
 
 
 if __name__ == "__main__":
